@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NameGenerator {
-/*
-    public static List<String> getName(int count){
+
+    /*public static List<String> getName(int count){
         var namse=new ArrayList<String>();
         for (var i=0; i<count; i++){
             namse.add(getName());

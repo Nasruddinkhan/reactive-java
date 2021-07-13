@@ -10,11 +10,14 @@ public class TestFileService {
                 Util.onComplete()
         );
 
-        FileService.write("file3.txt", "Hi create new file now").subscribe(
-                Util.onNext(),
-                Util.onError(),
-                Util.onComplete()
-        );
+        for (int i = 0; i < 10000; i++) {
+            FileService.write("file3.txt", "Hi create new file now").subscribe(
+                    Util.onNext(),
+                    Util.onError(),
+                    Util.onComplete()
+            );
+        }
+
 
         FileService.read("file3.txt").subscribe(
                 Util.onNext(),
@@ -22,10 +25,10 @@ public class TestFileService {
                 Util.onComplete()
         );
 
-        FileService.delete("file3.txt").subscribe(
+       /* FileService.delete("file3.txt").subscribe(
                 Util.onNext(),
                 Util.onError(),
                 Util.onComplete()
-        );
+        );*/
     }
 }
