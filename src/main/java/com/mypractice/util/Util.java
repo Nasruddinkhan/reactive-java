@@ -31,7 +31,13 @@ public class Util {
             e.printStackTrace();
         }
     }
-
+    public static void sleepMilliSeconds(int mills) {
+        try {
+            Thread.sleep(mills );
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
     public static Faker faker() {
         return FAKER;
     }

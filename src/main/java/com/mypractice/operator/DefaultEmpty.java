@@ -13,6 +13,6 @@ public class DefaultEmpty {
     }
 
     private static Flux<Integer> getOrderNumber() {
-        return Flux.range(1, 12);
+        return Flux.range(1, 9);
     }
 }
