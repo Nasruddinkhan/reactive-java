@@ -5,6 +5,7 @@ import reactor.core.publisher.Flux;
 
 public class ZipFlux {
     public static void main(String[] args) {
+
         Flux.zip(getBody(), getEngine(), getTires())
                 //.doOnNext(tuple-> tuple.toArray())
                 .subscribe(Util.subscriber());
@@ -16,7 +17,7 @@ public class ZipFlux {
     }
 
     public static Flux<String> getEngine(){
-        return Flux.range(1, 10)
+        return Flux.range(1, 2)
                 .map(i->"Engine "+i);
     }
 

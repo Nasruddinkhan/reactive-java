@@ -16,7 +16,7 @@ public class HotPublisherAutoConnect {
         Util.sleepSeconds(3);
 
         stringFluxMoview.subscribe(Util.subscriber("Nasruddin"));
-        Util.sleepSeconds(10);
+        Util.sleepSeconds(4);
         System.out.println("HotPublisherAutoConnect.main jalaluddin join");
         stringFluxMoview.subscribe(Util.subscriber("Jalaluddin"));
         Util.sleepSeconds(60);

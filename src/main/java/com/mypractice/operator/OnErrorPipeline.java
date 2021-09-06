@@ -9,7 +9,7 @@ public class OnErrorPipeline {
         Flux.range(1, 10)
                 .log()
                 .map(i -> 10 / (5 - i))
-                // .onErrorReturn(-1)
+                 .onErrorReturn(-1)
                 //.onErrorResume(s -> fallBack()) //microservice
                  .onErrorContinue((err, obj)-> {
                      System.out.println("OnErrorPipeline.main ["+obj+"]");

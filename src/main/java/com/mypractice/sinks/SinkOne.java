@@ -8,7 +8,8 @@ public class SinkOne {
     public static void main(String[] args) {
         Sinks.One<Object> objectOne = Sinks.one();
         Mono<Object> objectMono = objectOne.asMono();
+        objectOne.tryEmitValue("Hi ");
         objectMono.subscribe(Util.subscriber("Nasruddin  khan"));
-        objectOne.tryEmitValue("Hi Nasruddin");
+        objectMono.subscribe(Util.subscriber("Jalauddin khan"));
     }
 }

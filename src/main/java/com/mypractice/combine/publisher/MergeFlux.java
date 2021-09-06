@@ -7,6 +7,7 @@ import java.time.Duration;
 
 public class MergeFlux {
     public static void main(String[] args) {
+        Flux.merge(Flux.just(1,2,3),Flux.just(1,2,3),Flux.just(1,2,3)).subscribe(Util.subscriber());
      Flux<String> stringFlux =   Flux.merge(QatarFlight.getFlights(), EmirateFlight.getFlights(),
                 IndiaFlight.getFlights()  );
 

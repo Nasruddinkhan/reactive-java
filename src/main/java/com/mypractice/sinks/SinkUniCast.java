@@ -17,6 +17,5 @@ public class SinkUniCast {
         sinks.tryEmitNext("How r u ");
         sinks.tryEmitNext("?");
 
-
     }
 }

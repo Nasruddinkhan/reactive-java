@@ -15,10 +15,10 @@ public class HotPublisherChache {
         Util.sleepSeconds(2);
 
         stringFluxMoview.subscribe(Util.subscriber("Nasruddin"));
-        Util.sleepSeconds(10);
+        Util.sleepSeconds(3);
         System.out.println("HotPublisherAutoConnect.main jalaluddin join");
         stringFluxMoview.subscribe(Util.subscriber("Jalaluddin"));
-        Util.sleepSeconds(60);
+        Util.sleepSeconds(10);
 
     }
     public static Stream<String> getMovie(){

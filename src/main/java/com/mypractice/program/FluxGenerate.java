@@ -5,6 +5,7 @@ import reactor.core.publisher.Flux;
 
 public class FluxGenerate {
     public static void main(String[] args) {
+
         //allow only one item
         Flux.generate(synchronousSink -> {
             String name =  Util.faker().artist().name();
@@ -14,6 +15,8 @@ public class FluxGenerate {
            // synchronousSink.next(2);
            // synchronousSink.next(3);
 
-        }).take(2).subscribe(Util.subscriber());
+        })
+                .take(2)
+                .subscribe(Util.subscriber());
     }
 }
