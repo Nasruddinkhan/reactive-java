@@ -12,7 +12,7 @@ public class SwitchIfEmpty {
     }
     //redis & hazelcast
     private static Flux<Integer> getOrderNumber() {
-        return Flux.range(1, 10);
+        return Flux.range(1, 12);
     }
     //db
     private static Flux<Integer> fallBack() {

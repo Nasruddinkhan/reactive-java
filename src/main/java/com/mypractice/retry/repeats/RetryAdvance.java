@@ -10,8 +10,8 @@ public class RetryAdvance {
 
     public static void main(String[] args) {
         getOrder(Util.faker().business().creditCardNumber())
-                //.doOnError(err -> System.out.println(err.getMessage()))
-                // .retry(5)
+                .doOnError(err -> System.out.println(err.getMessage()))
+                 .retry(5)
                 .retryWhen(Retry.from(
                         flux -> flux.doOnNext(retrySignal -> {
                             System.out.println(retrySignal.totalRetries());

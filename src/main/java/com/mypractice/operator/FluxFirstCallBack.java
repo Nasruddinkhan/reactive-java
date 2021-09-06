@@ -14,7 +14,7 @@ public class FluxFirstCallBack {
         }).doOnComplete(() -> System.out.println("FluxFirstCallBack.main doOnComplete"))
                 .doFirst(() -> System.out.println("FluxFirstCallBack.main doFirst 1"))   //1 first call is do first
                 .doOnNext(o -> System.out.println("FluxFirstCallBack.main doOnNext" + o))
-                .doOnSubscribe(o -> System.out.println("FluxFirstCallBack.main doOnSubscribe" + o)) //2 call the on subscriber
+                .doOnSubscribe(o -> System.out.println("FluxFirstCallBack.main doOnSubscribe 1" + o)) //2 call the on subscriber
                 .doOnRequest(o -> System.out.println("FluxFirstCallBack.main doOnRequest" + o))
                 .doFirst(() -> System.out.println("FluxFirstCallBack.main doFirst 2"))   //1 first call is do first
 
@@ -23,6 +23,7 @@ public class FluxFirstCallBack {
                 .doOnComplete(() -> System.out.println("FluxFirstCallBack.main doOnComplete"))
                 .doFinally(c -> System.out.println("FluxFirstCallBack.main doFinally" + c))
                 .doFirst(() -> System.out.println("FluxFirstCallBack.main doFirst 3"))   //1 first call is do first
+                .doOnSubscribe(o -> System.out.println("FluxFirstCallBack.main doOnSubscribe 2" + o)) //2 call the on subscriber
 
                 .doOnDiscard(Object.class, o -> System.out.println("FluxFirstCallBack.main doOnDiscard" + o))
                 .subscribe(Util.subscriber());

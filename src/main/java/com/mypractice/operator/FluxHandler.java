@@ -10,6 +10,8 @@ public class FluxHandler {
             synchronousSink.next(name);
         }).map(Object::toString).handle((o, synchronousSink) -> {
             System.out.println("FluxHandler.main [" + o + "]");
+            synchronousSink.complete();
+
             if (o.equals("cat")) {
                 synchronousSink.complete();
             }

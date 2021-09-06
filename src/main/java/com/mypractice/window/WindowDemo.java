@@ -12,18 +12,19 @@ public class WindowDemo {
 
     public static void main(String[] args) {
         eventStream()
-                // .window(5)
-                .window(Duration.ofSeconds(5))
+                 .window(5)
+                //.window(Duration.ofSeconds(5))
                 .flatMap(flux -> saveEvent(flux))
                 .subscribe(Util.subscriber());
         Util.sleepSeconds(60);
     }
 
-    public static Mono<Integer> saveEvent(Flux<String> flux) {
+    public static Mono<Void> saveEvent(Flux<String> flux) {
         return flux.doOnNext(e -> System.out.println("saving " + e)).doOnComplete(() -> {
             System.out.println("save this batch");
             System.out.println("-----------");
-        }).then(Mono.just(atomicInteger.getAndIncrement()));
+        }).then();
+               // .then(Mono.just(atomicInteger.getAndIncrement()));
     }
 
     private static Flux<String> eventStream() {

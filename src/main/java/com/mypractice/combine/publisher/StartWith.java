@@ -38,6 +38,7 @@ class NameGenerator {
             System.out.println("generate new name");
             Util.sleepSeconds(1);
             String name = Util.faker().name().name();
+            list.add(name);
             stringSynchronousSink.next(name);
         }).cast(String.class)
                 .startWith(getFromCache());

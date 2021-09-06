@@ -17,7 +17,7 @@ public class Parllel {
                 //.subscribe(v-> printThread("suscribe\t"+v));
                 .subscribe(v-> integers.add(v));
        // Util.sleepSeconds(integers.size());
-        Util.sleepSeconds(5);
+        Util.sleepSeconds(2);
         Util.sleepSeconds(integers.size());
 
     }
