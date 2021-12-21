@@ -10,7 +10,9 @@ public class OnErrorPipeline {
                 .log()
                 .map(i -> 10 / (5 - i))
                  .onErrorReturn(-1)
-                .onErrorResume(s -> fallBack(s)) //microservice
+                //.onErrorResume(s -> fallBack(s)) //microservice
+                 //.onErrorReturn(-1)
+                //.onErrorResume(s -> fallBack()) //microservice
                  .onErrorContinue((err, obj)-> {
                      System.out.println("OnErrorPipeline.main ["+obj+"]");
                      System.out.println("OnErrorPipeline.main err ["+err.getMessage()+"]");
